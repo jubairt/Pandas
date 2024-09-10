@@ -43,6 +43,7 @@ def name_age_summary(row):
 # ?DataFrame Context: The axis parameter is relevant when using apply() on a DataFrame because you need to specify whether the function should operate row-wise (axis=1) or column-wise (axis=0). For a Series, this distinction isn’t needed because it’s inherently one-dimensional.
 
 # Apply the custom function to each row
+# ! ask nazil
 df['Name_Age_Summary'] = df.apply(name_age_summary, axis=1)
 
 print("DataFrame with Name and Age Summary:")
@@ -62,6 +63,7 @@ def range_of_column(column):
     return column.max() - column.min()
 
 # Apply the custom function to each column
+# ! ask nazil
 column_ranges = df.apply(range_of_column, axis=0)
 
 print("Range of Each Column:")

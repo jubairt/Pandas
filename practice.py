@@ -1,19 +1,15 @@
 import pandas as pd
 
-# Sample DataFrame
-data = {
-    'Name': ['John', 'Jane', 'Tom', 'Lucy'],
-    'Age': [28, 34, 29, 31],
-    'Salary': [50000, 60000, 55000, 70000]
-}
+# Creating two DataFrames with matching indexes
+df1 = pd.DataFrame({
+    'Name': ['John', 'Jane', 'Tom', 'Anna'],
+    'Age': [28, 34, 29, 32]
+}, index=[1, 2, 3, 4])
 
-df = pd.DataFrame(data)
+df2 = pd.DataFrame({
+    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston'],
+    'Occupation': ['Engineer', 'Doctor', 'Artist', 'Lawyer']
+}, index=[1, 2, 3, 4])
 
-def standardize(value):
-    mean=df['Age'].mean()
-    std=df['Age'].std()
-    return (value-mean)/std
-    
-
-df['Age_ std']=df['Age'].transform(standardize)
-print(df)
+new=df1.join(df2)
+print(new)
